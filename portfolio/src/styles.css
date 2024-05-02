@@ -75,6 +75,7 @@ body {
 #projects img {
   width: 40vw;
   transition: transform 0.3s;
+  border-radius: 5px;
 }
 
 #projects img:hover {

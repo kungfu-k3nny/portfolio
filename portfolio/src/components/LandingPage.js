@@ -1,15 +1,16 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import Typewriter from './Typewriter';
 
 const LandingPage = () => {
   const [indicatorPosition, setIndicatorPosition] = useState(0);
-  const [activeButton, setActiveButton] = useState(1);
+  const [activeButton, setActiveButton] = useState(0);
   const navRef = useRef(null);
+
+  const sections = ['home', 'projects', 'about', 'resume', 'contact'];
 
   const scrollToSection = (id, buttonIndex) => {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-    updateIndicator(buttonIndex);
-    setActiveButton(buttonIndex);
   };
 
   const updateIndicator = (buttonIndex) => {
@@ -21,7 +22,6 @@ const LandingPage = () => {
 
   const handleScroll = () => {
     const scrollY = window.scrollY - window.screen.availHeight/2;
-    const sections = ['home', 'projects', 'about', 'resume', 'contact'];
     const sectionHeights = sections.map((id) => document.getElementById(id).offsetTop);
 
     const sectionIndex = sectionHeights.findIndex((h) => scrollY < h);
@@ -31,6 +31,7 @@ const LandingPage = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
+
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -54,28 +55,73 @@ const LandingPage = () => {
       </nav>
 
       <div id="home" className="section black">
-        <h1>Kenneth Liou</h1>
+        <div></div>
+        <div>
+          <h1>Kenneth Liou</h1>
+          <p>
+            <Typewriter words={["Machine Learning Engineer", "Software Engineer"]} />
+          </p>
+        </div>
+        <div>
+          <div className="down-indicator-white" onClick={() => scrollToSection('projects', 1)}>
+              View Projects
+            <div>
+              <img src={"images/angle-arrow-down-white.png"}></img>
+            </div>
+          </div>
+        </div>
+        
       </div>
 
       <div id="projects" className="section dark-blue">
+        <div></div>
         <h2>Projects</h2>
-        <Link to="/project1"><img src="images/sportsbook.png" className="portfolio-image" alt="Project 1" /></Link>
-        <Link to="/project2"><img src="/dummy2.png" className="portfolio-image" alt="Project 2" /></Link>
-        <Link to="/project3"><img src="/dummy3.png" className="portfolio-image" alt="Project 3" /></Link>
-        <Link to="/project4"><img src="/dummy4.png" className="portfolio-image" alt="Project 4" /></Link>
+        <div>
+          <Link to="/project1"><img src="images/sportsbook.png" className="portfolio-image" alt="Project 1" /></Link>
+          <Link to="/project2"><img src="/dummy2.png" className="portfolio-image" alt="Project 2" /></Link>
+          <Link to="/project3"><img src="/dummy3.png" className="portfolio-image" alt="Project 3" /></Link>
+          <Link to="/project4"><img src="/dummy4.png" className="portfolio-image" alt="Project 4" /></Link>
+        </div>
+        <div>
+          <div className="down-indicator-white" onClick={() => scrollToSection('about', 2)}>
+            About Me
+            <div>
+              <img src={"images/angle-arrow-down-white.png"}></img>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="about" class="section light-gray">
+        <div></div>
         <h2>About Me</h2>
         <p>My bio</p>
+        <div>
+          <div className="down-indicator-black" onClick={() => scrollToSection('resume', 3)}>
+            View Resume
+            <div>
+              <img src={"images/angle-arrow-down-black.png"}></img>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resume" class="section yellow">
+        <div></div>
         <h2>Resume</h2>
         <p>resume image</p>
+        <div>
+          <div className="down-indicator-black" onClick={() => scrollToSection('contact', 4)}>
+            Contact Me
+            <div>
+              <img src={"images/angle-arrow-down-black.png"}></img>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="contact" class="section dark-blue">
+        <div></div>
         <h2>Contact Me</h2>
         <p>You can reach me at:</p>
         <ul>

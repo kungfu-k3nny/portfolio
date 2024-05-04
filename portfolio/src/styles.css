@@ -3,12 +3,25 @@ body {
   font-family: Arial, sans-serif;
 }
 
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+h2 span {
+  border-right: 2px solid black;
+  animation: blink 0.75s step-end infinite;
+}
+
+button {
+  cursor: pointer; /* This will apply the hand cursor to all buttons */
+}
 /* Nav styling */
 .nav {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  position: sticky;
+  width: 100%; /* Ensures the nav bar extends full width */
+  position: fixed;
   top: 0;
   background-color: #FFFFFF;
   z-index: 1000;
@@ -45,9 +58,38 @@ body {
 .section {
   height: 100vh; /* 100% of the viewport height */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
+}
+
+.down-indicator-black {
+  padding-bottom: 5%;
+  font-size: 16px; /* Adjust font size as needed */
+  cursor: pointer;
+  color: #000; /* Use a color that stands out against the background */
+  user-select: none; /* Prevent text selection */
+  opacity: .6; 
+  transition: opacity 0.2s;
+}
+
+.down-indicator-black:hover {
+  opacity: 1;
+}
+
+.down-indicator-white {
+  padding-bottom: 5%;
+  font-size: 16px; /* Adjust font size as needed */
+  cursor: pointer;
+  color: #fff; /* Use a color that stands out against the background */
+  user-select: none; /* Prevent text selection */
+  opacity: .6;
+  transition: opacity 0.2s;
+}
+
+.down-indicator-white:hover {
+  opacity: 1;
 }
 
 /* Background colors */
@@ -72,8 +114,8 @@ body {
 }
 
 /* Project section styling */
-#projects img {
-  width: 40vw;
+.portfolio-image {
+  width: 35vw;
   transition: transform 0.3s;
   border-radius: 5px;
 }

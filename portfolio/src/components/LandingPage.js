@@ -58,9 +58,7 @@ const LandingPage = () => {
         <div></div>
         <div>
           <h1>Kenneth Liou</h1>
-          <p>
-            <Typewriter words={["Machine Learning Engineer", "Software Engineer"]} />
-          </p>
+          <Typewriter words={["Machine Learning Engineer", "Software Engineer"]} />
         </div>
         <div>
           <div className="down-indicator-white" onClick={() => scrollToSection('projects', 1)}>

@@ -7,10 +7,26 @@ body {
   50% { border-color: transparent; }
 }
 
-h2 span {
-  border-right: 2px solid black;
-  animation: blink 0.75s step-end infinite;
+.horizontal-stack {
+  display: flex;
+  align-items: center; /* Aligns items vertically in the center */
+  justify-content: center;
+  height: 33px;
+  flex-direction: row;
+  line-height: 1;
 }
+
+blinker {
+  border-right: 10px solid white;
+  animation: blink 1s step-end infinite;
+  height: 18px; 
+}
+
+ .blinker-space {
+  padding-right: 1px;
+}
+
+
 
 button {
   cursor: pointer; /* This will apply the hand cursor to all buttons */
@@ -23,7 +39,8 @@ button {
   width: 100%; /* Ensures the nav bar extends full width */
   position: fixed;
   top: 0;
-  background-color: #FFFFFF;
+  background-color: #14213D;
+  
   z-index: 1000;
 }
 
@@ -33,6 +50,7 @@ button {
   padding: 0.5rem 1rem;
   transition: opacity 0.4s ease;
   opacity: .60;
+  color: #FFF;
   font-size: 1rem;
 }
 

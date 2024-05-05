@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Typewriter = ({ words, typingDelay = 150, deletingDelay = 100, delayBetweenWords = 1000 }) => {
+const Typewriter = ({ words, typingDelay = 100, deletingDelay = 50, delayBetweenWords = 1000 }) => {
     const [index, setIndex] = useState(0);
     const [subIndex, setSubIndex] = useState(0);
     const [currentWord, setCurrentWord] = useState('');
@@ -8,9 +8,14 @@ const Typewriter = ({ words, typingDelay = 150, deletingDelay = 100, delayBetwee
 
     useEffect(() => {
         if (isDeleting) {
-            if (subIndex > 0) {
+            if (subIndex > 1) {
                 setTimeout(() => {
                     setCurrentWord(currentWord.slice(0, subIndex - 1));
+                    setSubIndex(subIndex - 1);
+                }, deletingDelay);
+            } else if (subIndex == 1) {
+                setTimeout(() => {
+                    setCurrentWord('');
                     setSubIndex(subIndex - 1);
                 }, deletingDelay);
             } else {
@@ -32,7 +37,10 @@ const Typewriter = ({ words, typingDelay = 150, deletingDelay = 100, delayBetwee
     }, [subIndex, isDeleting]);
 
     return (
-        <span>{currentWord}</span>
+        <div className='horizontal-stack'>
+            <p className='blinker-space'>{currentWord}</p>
+            <blinker></blinker>
+        </div>
     );
 };
 

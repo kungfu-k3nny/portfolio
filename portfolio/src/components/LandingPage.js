@@ -121,12 +121,15 @@ const LandingPage = () => {
       <div id="contact" class="section dark-blue">
         <div></div>
         <h2>Contact Me</h2>
-        <p>You can reach me at:</p>
-        <ul>
-          <li>Email: kenneth_liou@brown.edu</li>
-          <li>Phone: (650) 996-9315</li>
-          <li>LinkedIn: <a href="https://www.linkedin.com/in/kenneth-liou/">https://www.linkedin.com/in/kenneth-liou/</a></li>
-        </ul>
+        <div>
+          <p>You can reach me at:</p>
+          <ul>
+            <li>Email: kenneth_liou@brown.edu</li>
+            <li>Phone: (650) 996-9315</li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/kenneth-liou/">https://www.linkedin.com/in/kenneth-liou/</a></li>
+          </ul>
+        </div>
+        <div></div>
       </div>
     </div>
   );

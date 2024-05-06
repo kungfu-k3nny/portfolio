@@ -37,7 +37,7 @@ const Typewriter = ({ words, typingDelay = 100, deletingDelay = 50, delayBetween
     }, [subIndex, isDeleting]);
 
     return (
-        <div className='horizontal-stack'>
+        <div className='blinker-horizontal-stack'>
             <p className='blinker-space'>{currentWord}</p>
             <blinker></blinker>
         </div>

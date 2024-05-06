@@ -7,7 +7,7 @@ body {
   50% { border-color: transparent; }
 }
 
-.horizontal-stack {
+.blinker-horizontal-stack {
   display: flex;
   align-items: center; /* Aligns items vertically in the center */
   justify-content: center;
@@ -26,14 +26,14 @@ blinker {
   padding-right: 1px;
 }
 
-
-
 button {
   cursor: pointer; /* This will apply the hand cursor to all buttons */
 }
 /* Nav styling */
 .nav {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Horizontal offset, vertical offset, blur radius, color */
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.2), /* Horizontal offset, vertical offset, blur radius, color */
+    inset 0 -2px 16px rgba(255, 255, 255, 0.1); /* Horizontal offset, vertical offset, blur radius, color */
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -80,6 +80,34 @@ button {
   justify-content: space-between;
   align-items: center;
   text-align: center;
+}
+
+.horizontal-stack {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; /* Aligns items vertically in the center */
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.intro-block {
+  width: 208px; /* Adjust the width and height as needed */
+  height: 120px;
+  padding: 24px;
+  padding-right: 64px;
+}
+
+.image-container {
+  width: 200px; /* Adjust the width and height as needed */
+  height: 200px;
+  overflow: hidden; /* Hide the overflowing parts of the image */
+  border-radius: 50%; /* Crop the image into a circle shape */
+}
+
+.image-container img {
+  width: 100%; /* Make the image fill the container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove default image spacing */
 }
 
 .down-indicator-black {

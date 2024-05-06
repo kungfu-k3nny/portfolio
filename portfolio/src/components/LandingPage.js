@@ -56,9 +56,14 @@ const LandingPage = () => {
 
       <div id="home" className="section black">
         <div></div>
-        <div>
-          <h1>Kenneth Liou</h1>
-          <Typewriter words={["Machine Learning Engineer", "Software Engineer"]} />
+        <div className='horizontal-stack'>
+          <div className='intro-block'>
+            <h1>Kenneth Liou</h1>
+            <Typewriter words={["Machine Learning Engineer", "Software Engineer"]} />
+          </div>
+          <div class="image-container">
+            <img src="images/head_shot.jpg" alt="Head shot"></img>
+          </div>
         </div>
         <div>
           <div className="down-indicator-white" onClick={() => scrollToSection('projects', 1)}>

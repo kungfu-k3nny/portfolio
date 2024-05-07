@@ -130,8 +130,8 @@ const LandingPage = () => {
           <h2 className='h2-contact'>Get in Touch</h2>
           <div className='horizontal-stack-contact'>
             <div>
-              <p className='footer-light'>Phone Number: +1 (650) 996-9315<br></br>
-              Email: kenneth_liou@brown.edu</p>
+              <p className='footer-light'><b className='poppins-regular'>Phone Number:</b> +1 (650) 996-9315<br></br>
+              <b className='poppins-regular'>Email:</b> kenneth_liou@brown.edu</p>
               <div className='contact-image-block'>
                 <a href="mailto:kenneth_liou@brown.edu" class="contact-button-container" alt="Email Me Button">
                   <img src="images/mail.png" alt="Email Icon"></img>

@@ -30,13 +30,14 @@ const LandingPage = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-
+    const interval = setInterval(() => {
+      handleScroll()
+    }, 100); // 500 milliseconds = 0.5 seconds
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      clearInterval(interval);
     };
-  }, []);
+  }, [indicatorPosition]);
 
   return (
     <div>
@@ -55,7 +56,7 @@ const LandingPage = () => {
       </nav>
 
       <div id="home" className="section black">
-        <div></div>
+        <div className='top-spacer'></div>
         <div className='horizontal-stack'>
           <div className='intro-block'>
             <h1>Kenneth Liou</h1>
@@ -67,7 +68,7 @@ const LandingPage = () => {
         </div>
         <div>
           <div className="down-indicator-white" onClick={() => scrollToSection('projects', 1)}>
-              View Projects
+              <p>View my Projects</p>
             <div>
               <img src={"images/angle-arrow-down-white.png"}></img>
             </div>
@@ -87,7 +88,7 @@ const LandingPage = () => {
         </div>
         <div>
           <div className="down-indicator-white" onClick={() => scrollToSection('about', 2)}>
-            About Me
+            <p>Learn More About Me</p>
             <div>
               <img src={"images/angle-arrow-down-white.png"}></img>
             </div>
@@ -101,7 +102,7 @@ const LandingPage = () => {
         <p>My bio</p>
         <div>
           <div className="down-indicator-black" onClick={() => scrollToSection('resume', 3)}>
-            View Resume
+            <p>See my Resume</p>
             <div>
               <img src={"images/angle-arrow-down-black.png"}></img>
             </div>
@@ -110,12 +111,13 @@ const LandingPage = () => {
       </div>
 
       <div id="resume" class="section yellow">
-        <div></div>
-        <h2>Resume</h2>
-        <p>resume image</p>
+        <div className='top-spacer'></div>
+        <div className='resume-block'>
+          <iframe id="pdf-viewer" src="Kenneth_Liou_general.pdf" frameborder="0"></iframe>
+        </div>
         <div>
           <div className="down-indicator-black" onClick={() => scrollToSection('contact', 4)}>
-            Contact Me
+            <p>Contact Me</p>
             <div>
               <img src={"images/angle-arrow-down-black.png"}></img>
             </div>
@@ -123,19 +125,27 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div id="contact" class="section dark-blue">
-        <div></div>
-        <h2>Contact Me</h2>
-        <div>
-          <p>You can reach me at:</p>
-          <ul>
-            <li>Email: kenneth_liou@brown.edu</li>
-            <li>Phone: (650) 996-9315</li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/kenneth-liou/">https://www.linkedin.com/in/kenneth-liou/</a></li>
-          </ul>
+      <div id="contact" class="contact-section dark-blue">
+        <div className='contact-block'>
+          <h2 className='h2-contact'>Get in Touch</h2>
+          <div className='horizontal-stack-contact'>
+            <div>
+              <p className='footer-light'>Phone Number: +1 (650) 996-9315<br></br>
+              Email: kenneth_liou@brown.edu</p>
+              <div className='contact-image-block'>
+                <a href="mailto:kenneth_liou@brown.edu" class="contact-button-container" alt="Email Me Button">
+                  <img src="images/mail.png" alt="Email Icon"></img>
+                </a>
+                <a href="https://www.linkedin.com/in/kenneth-liou/" class="contact-button-container" alt="Linkedin Button" target="_blank" rel="noopener noreferrer">
+                  <img src="images/linkedin.png" alt="Linkedin Icon"></img>
+                </a>
+              </div>
+            </div>
+            <p className='footer-message'>Eager to Learn. Inspired to create.<br></br>
+              Let's change the world with artificial intelligence together.</p>
+          </div>  
         </div>
-        <div></div>
-      </div>
+      </div> 
     </div>
   );
 };

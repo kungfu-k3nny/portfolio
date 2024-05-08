@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const Typewriter = ({ words, typingDelay = 100, deletingDelay = 50, delayBetweenWords = 1000 }) => {
     const [index, setIndex] = useState(0);
     const [subIndex, setSubIndex] = useState(0);
-    const [currentWord, setCurrentWord] = useState('');
+    const [currentWord, setCurrentWord] = useState(' ');
     const [isDeleting, setIsDeleting] = useState(false);
 
     useEffect(() => {
@@ -15,7 +15,7 @@ const Typewriter = ({ words, typingDelay = 100, deletingDelay = 50, delayBetween
                 }, deletingDelay);
             } else if (subIndex == 1) {
                 setTimeout(() => {
-                    setCurrentWord('');
+                    setCurrentWord(' ');
                     setSubIndex(subIndex - 1);
                 }, deletingDelay);
             } else {

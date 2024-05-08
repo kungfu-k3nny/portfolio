@@ -13,6 +13,11 @@ h1 {
   font-size: 40px;
 }
 
+.h1-intro {
+  line-height: 1.2;
+  margin: 0;
+}
+
 h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
@@ -51,13 +56,13 @@ p {
   50% { border-color: transparent; }
 }
 
-.horizontal-stack {
-  gap: 40px;
+.horizontal-stack-intro {
   display: flex;
   flex-wrap: wrap;
   align-items: center; /* Aligns items vertically in the center */
   justify-content: space-around;
   flex-direction: row;
+  column-gap: 120px;
 }
 
 .blinker-horizontal-stack {
@@ -77,6 +82,7 @@ blinker {
 
  .blinker-space {
   padding-right: 1px;
+  height: 20px;
 }
 
 button {
@@ -100,14 +106,14 @@ button {
 .nav button {
   background-color: transparent;
   border: 0px;
-  padding: 0.5rem 1rem;
-  transition: opacity 0.4s ease;
+  padding: 0.5rem 1.5rem;
+  transition: opacity 0.3s ease;
   opacity: .65;
   color: #FFF;  
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .nav button:hover {
@@ -142,15 +148,55 @@ button {
   height: 6rem;
 }
 
+.medium-spacer {
+  height: 3rem;
+}
+
 .intro-block {
-  width: 280px; /* Adjust the width and height as needed */
-  height: 120px;
-  padding-right: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  text-align: center;
+  width: 300px; /* Adjust the width and height as needed */
+  gap: 20px;
+}
+
+.intro-block button {
+  background-color: transparent;
+  width: 200px;
+  border-radius: 8px;
+  border-width: 3px;
+  border-color: #FCA311;
+  padding: 0.5rem 0.5rem;
+  transition: opacity 0.3s ease;
+  opacity: .7;
+  color: #FFF;  
+  font-family: "Poppins", sans-serif;
+  font-weight: 400; 
+  font-style: normal;
+  font-size: 16px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.intro-block p{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  margin: 4px;
+}
+
+.intro-block button:hover {
+  opacity: 1; /* Change opacity to 100% on hover */
 }
 
 .image-container {
-  width: 200px; /* Adjust the width and height as needed */
-  height: 200px;
+  width: 300px; /* Adjust the width and height as needed */
+  height: 300px;
   overflow: hidden; /* Hide the overflowing parts of the image */
   border-radius: 50%; /* Crop the image into a circle shape */
 }
@@ -167,7 +213,7 @@ button {
   cursor: pointer;
   color: #000; /* Use a color that stands out against the background */
   user-select: none; /* Prevent text selection */
-  opacity: .65; 
+  opacity: .7; 
   transition: opacity 0.2s;
   padding-top: 1rem;
 }

@@ -32,7 +32,7 @@ const LandingPage = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       handleScroll()
-    }, 100); // 500 milliseconds = 0.5 seconds
+    }, 50); // 500 milliseconds = 0.5 seconds
 
     return () => {
       clearInterval(interval);
@@ -50,17 +50,18 @@ const LandingPage = () => {
         className={`nav-button ${2 === activeButton ? 'active' : ''}`}>About Me</button>
         <button onClick={() => scrollToSection('resume', 4)}
         className={`nav-button ${3 === activeButton ? 'active' : ''}`}>Resume</button>
-        <button onClick={() => scrollToSection('contact', 5)}
-        className={`nav-button ${4 === activeButton ? 'active' : ''}`}>Contact Me</button>
         <div className="indicator" style={{ left: `${indicatorPosition}px` }}></div>
       </nav>
 
       <div id="home" className="section black">
         <div className='top-spacer'></div>
-        <div className='horizontal-stack'>
+        <div className='horizontal-stack-intro'>
           <div className='intro-block'>
-            <h1>Kenneth Liou</h1>
+            <h1 className='h1-intro'>Kenneth Liou</h1>
             <Typewriter words={["Machine Learning Engineer", "Software Engineer"]} />
+            <div className='medium-spacer'></div>
+            <button onClick={() => scrollToSection('contact', 5)}
+            className={`intro-block button ${4 === activeButton ? 'active' : ''}`}><p>Get in Touch</p></button>
           </div>
           <div class="image-container">
             <img src="images/head_shot.jpg" alt="Head shot"></img>

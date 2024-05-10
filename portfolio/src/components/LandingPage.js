@@ -40,11 +40,6 @@ const LandingPage = () => {
     };
   }, [handleScroll]);
 
-  //sets the nav bar indicator to the first page
-  useEffect(() => {
-    updateIndicator(0)
-  }, []); // Empty dependency array to run only once after mount
-
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
@@ -73,30 +68,50 @@ const LandingPage = () => {
       <div id="home" className="section black">
         <div className='top-spacer'></div>
         <div className={`horizontal-stack-intro ${animate ? 'faded-slide' : ''}`}>
+          <div></div>
           <div className='intro-block'>
             <h1 className='h1-intro'>Kenneth Liou</h1>
             <Typewriter words={["Machine Learning Engineer", "Software Engineer"]} />
             <div className='medium-spacer'></div>
-            <button onClick={() => scrollToSection('projects', 2)}><p>View my Work</p></button>
+            <p>I develop software that makes people's lives easier.</p>
+            <p className='lighter'>Brown University class of 2024: <br></br>ScM Computer Science<br></br>BA Computer Science<br></br>BA Engineering</p>
+            <div className='medium-spacer'></div>
+            <button onClick={() => scrollToSection('projects', 2)}>View my Work</button>
             <div></div>
-            <button className="solid-button" onClick={() => scrollToSection('contact', 5)}><p>Get in Touch</p></button>
+            <button className="solid-button" onClick={() => scrollToSection('contact', 5)}>Get in Touch</button>
           </div>
           <div class="image-container">
             <img src="images/head_shot.jpg" alt="Head shot"></img>
           </div>
+          <div></div>
         </div>
         <div className='bottom-spacer'></div>
       </div>
 
       <div id="projects" className="section dark-blue">
-        <div></div>
+        <div className='top-spacer'></div>
         <h2>Projects</h2>
-        <div>
-          <Link to="/project1"><img src="images/sportsbook.png" className="portfolio-image" alt="Project 1" /></Link>
-          <Link to="/project2"><img src="/dummy2.png" className="portfolio-image" alt="Project 2" /></Link>
-          <Link to="/project3"><img src="/dummy3.png" className="portfolio-image" alt="Project 3" /></Link>
-          <Link to="/project4"><img src="/dummy4.png" className="portfolio-image" alt="Project 4" /></Link>
+        <div className='horizontal-stack-projects'>
+          <div className='portfolio-piece'>
+            <Link to="/project1" className='portfolio-image-container'>
+              <img src="images/sportsbook.png" className="portfolio-image" alt="Chug's Sportsbook" />
+            </Link>
+            <p>Chug's Sportsbook Competitive Analysis</p>
+          </div>
+          <div className='portfolio-piece'>
+            <Link to="/project2" className='portfolio-image-container'>
+              <img src="images/partiful.png" className="portfolio-image" alt="Partiful Homepage" />
+            </Link>
+            <p>Partiful Homepage Redesign</p>
+          </div>
+          <div className='portfolio-piece'>
+            <Link to="/project3" className='portfolio-image-container'>
+              <img src="images/bagelgourmet/responsiveredesign.png" className="portfolio-image" alt="Redesigned Bagel Gourmet Contact Page" />
+            </Link>
+            <p>Bagel Gourmet Responsive Redesign</p>
+          </div>
         </div>
+        <div className='bottom-spacer'></div>
         <div>
           <div className="down-indicator-white" onClick={() => scrollToSection('about', 2)}>
             <p>Learn More About Me</p>
@@ -108,9 +123,27 @@ const LandingPage = () => {
       </div>
 
       <div id="about" class="section light-gray">
-        <div></div>
+        <div className='top-scpacer'></div>
         <h2>About Me</h2>
-        <p>My bio</p>
+        <div className='horizontal-stack-about-me'>
+          <div></div>
+          <div>
+            <img src='images/foraging.jpg' alt='Me and my friend Brendan foraging for mussels at Pillar Point, Half Moon Bay'></img>
+            <p className='subtext'>My friend Brendan and I foraging for mussels at Pillar Point, Half Moon Bay</p>
+            <img src='images/mtg.jpg' alt='My friend Kevin and I playing Magic the Gathering'></img>
+            <p className='subtext'>My friend Kevin and I playing Magic the Gathering</p>
+          </div>
+          <p className='text-stack'>
+            Hey there! My name is Kenneth Liou, and I'm from silicon valley.
+            I'm currently studying for my master's degree in Computer Science at Brown University, which is also where I obtained my two undergraduate degrees in Computer Science and Engineering.
+            <br></br><br></br>I'm interested in developing software that makes people's lives easier.
+            Currently I'm working at Althia, a student founded startup, conducting research to develop their machine learning model.  
+            <br></br><br></br>Outside of academics, I'm a family head in the Chinese Student Association, and I play as a sub on the Brown Esports team for League of Legends.
+            I love all things outdoors from foraging to snowboarding, and I also enjoy playing basketball.
+            Currently in my free time, I'm learning Creep by Radiohead on acoustic guitar, and I'm training to dunk.
+          </p>
+          <div></div>
+        </div>
         <div>
           <div className="down-indicator-black" onClick={() => scrollToSection('resume', 3)}>
             <p>See my Resume</p>

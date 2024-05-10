@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import ScrollToTop from './ScrollToTop';
 
 const ProjectOne = () => {
   const navigate = useNavigate();
@@ -16,22 +17,52 @@ const ProjectOne = () => {
   };
 
   return (
-    <div>
+    <div className='case-study'>
+      <ScrollToTop />
       <button className="back-button" onClick={goBackToMainPage}>
         Back to Projects
       </button>
 
       <header className="project-header">
-        <h1>Chug's Sportsbook</h1>
+        <h1>Chug's Sportsbook: Enhancing User Engagement through Intuitive Design</h1>
       </header>
 
       <section className="project-section">
-        <p>I ran a competitive analysis between favoriting functions of 3 sites and produced my own version in a React app built from scratch.</p>
+        <h4>As a frequent user of fantasy sports websites, I identified an opportunity to enhance the user experience by integrating advanced sorting and filtering functions inspired by popular platforms such as Netflix, Instagram, and Gmail.</h4>
+        <h4>My goal was to create a more personalized and accessible interface that allows users to navigate and interact with content effortlessly.</h4>
       </section>
 
       <section className="project-section">
-        <h2>Part 1: Competitive Analysis</h2>
-        <p>I will be conducting a competitive analysis for the websites of Netflix, Instagram, and Gmail:</p>
+        <h2>Competitive Analysis: Learning from the Best</h2>
+        <p>To kickstart the project, I conducted a thorough competitive analysis focusing on the favoriting functions of three diverse platforms: Netflix, Instagram, and Gmail. Each platform offered unique insights into user preferences and interaction models.
+          I chose sites with little similarity to existing fantasy sports website to see if I can gather inspiration from different functionalities.
+        </p>
+        
+        <div className='image-block'>
+          <img src="images/netflix.png" alt="Netflix Homescreen"></img>
+          <p>
+            <b>Netflix</b> excels in curating content based on user preferences but lacks easy navigational cues once a film starts playing. Its inability to sort films by studio was noted as a potential area for improvement.
+          </p>
+        </div>
+
+        <div className='image-block'>
+        <img src="images/instagram.png" alt="Instagram Homescreen"></img>
+          <p>
+          <b>Instagram</b> provides a strong user engagement by sorting content by relevance and recency, though it falls short in searchable content by title, limiting user control over content discovery.
+          </p>
+        </div>
+        
+        <div className='image-block'>
+          <img src="images/gmail.png" alt="Gmail Homescreen"></img>
+          <p>
+          <b>Gmail</b> stands out with its chronological email sorting, making it easy to track communication based on time. However, it lacks sorting by relevance, which could enhance the user's ability to prioritize information.
+          </p>
+        </div>
+        
+        <p>
+          My findings are summarize in the following table:
+        </p>
+
         <table border="1">
           <tr>
             <th>Factor</th>
@@ -71,54 +102,32 @@ const ProjectOne = () => {
           </tr>
         </table>
         <p>
-          Netflix's strongest factor was that as soon as you open it, a film is already playing based on your preferences.
-          Since it is difficult for the user to know if they will like a film or not, it is good that Netflix sorts films by relevance to the user.
-          The drawback of this suggested film feature is poor navigation scent.
-          With the whole window being the suggested film, there is no obvious conceptual model for how to navigate the website.
-          Netflix's weakest factor is probably that you cannot sort films by studio.
-          Some people are fans of certain film studios, so having the option to see films by a particular studio would be beneficial.
+          These insights laid the groundwork for designing features that could address these gaps while tailoring the functionality to the needs of fantasy sports enthusiasts.
         </p>
+      </section>
+
+      <section className="project-section">
+        <h2>Building Chug's Sportsbook</h2>
         <p>
-          Instagram's strongest factor was that the content is by default sorted from top to bottom based on interest to the user, and also based on recency.
-          This instills a strong navigational scent, since users know that the next content that comes up is likely to pique their interest.
-          Instagram's biggest weakness is its inability to search content by title.
-          By nature of the content, which typically is too casual and numerous to warrant unique titles, this does make sense,
-          but it means that most information is either searched through the producer or fed by the company.
-        </p>
-        <p>
-          Gmail's strongest factor was its strict sorting of content by recency. This makes it easy for users to find emails just by knowing when they were sent.
-          Like Instagram, the fact that emails continue downwards until they move off-screen makes for a good navigation scent, showing more older emails below.
-          Gmail's biggest weakness is that the user cannot sort emails by relevance. This is not terrible, since Gmail is used more for record purposes than entertainment.
+          With the insights from my analysis, I set out to develop "Chug's Sportsbook," a React-based web application tailored for fantasy sports users. The design included several key features aimed at improving user experience:
         </p>
 
-        <p>The features I want to implement are:</p>
+        <img src="images/sportsbook.png" alt="Chug's Sportsbook"></img>
         <ol>
-          <li>Filtering content with a search bar</li>
-          <p>This can be done by adding a text box where items in the aggregator are temporarily removed if the text in the text box doesn't match with any text in the content.</p>
-          <li>Filtering content by producer</li>
-          <p>This can be done in conjunction with the search bar. Simply add the producer as another text to match the search bar text with.</p>
+          <li><b>Content Filtering: </b>Integrating a search bar allowed users to filter content dynamically based on keywords or producer names, making it easier to find specific items.</li>
+          <li><b>Sorting Functionality: </b>Users could sort sports props by game time or popularity through a dropdown menu, a feature inspired by the intuitive sorting mechanisms of Netflix and Gmail.</li>
+          <li><b>Interactive Prop Lists: </b>A dedicated area on the interface allowed users to favorite or remove player props, enhancing interaction and personalization.</li>
         </ol>
-      </section>
-
-      <section className="project-section">
-        <h2>Part 2: Creating the React App</h2>
-        <p>I chose to create a fantasy sports website since I use them often and a lot of their functionality relies on favoriting.
-          Filtering is incorporated through the buttons on top of the screen that select either NBA or LoL player props,
-          and the two buttons underneath filter for what category of player props are shown.
-          Sorting is incorporated through the sort-by dropdown menu, which sorts the props by game time or popularity.
-          Lastly, the props are aggregated on the right side of the screen, where users can remove props they changed their minds about.
-        </p>
         <p>
-          The app is run using Vercel and can be found here:
-        </p>
-        <p><a href="https://cs1300-development-9nxl.vercel.app/">Chug's Sports Book</a></p>
+          The app is run using Vercel and can be found here: <a href="https://cs1300-development-9nxl.vercel.app/" target="_blank" rel="noopener noreferrer">Chug's Sports Book</a>
+        </p>  
       </section>
 
       <section className="project-section">
-        <h2>Takeaways</h2>
-        <p>I was able to add features to the fantasy sports site inspired by the competitive analysis, like sorting by recency and filtering by category (like Netflix does for movies and TV shows).
-          With more time, I would like to add search functionality, as that was one of the best features I discovered from the competitive analysis.
+        <h2>Final Thoughts</h2>
+        <p>The project was a valuable learning experience in adapting best practices from leading tech platforms to niche markets. Future enhancements would include adding more advanced search functionalities and possibly integrating machine learning to predict user preferences.
         </p>
+        <p>Chug's Sportsbook stands as a testament to the power of user-centered design and the potential of competitive analysis in creating a compelling user experience. By continuously adapting and iterating on user feedback, the project will evolve to meet and exceed user expectations.</p>
       </section>
 
       <footer>

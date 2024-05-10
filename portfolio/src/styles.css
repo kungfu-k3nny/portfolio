@@ -18,6 +18,12 @@ h1 {
   margin: 0;
 }
 
+@media (max-width: 737px) {
+  .intro-block h1 {
+    font-size: 28px;
+  }
+}
+
 h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
@@ -32,7 +38,6 @@ p {
   font-size: 16px;
   line-height: 1.2;
 }
-
 
 .footer-light {
   font-family: "Poppins", sans-serif;
@@ -76,10 +81,10 @@ p {
   display: flex;
   flex-wrap: wrap;
   align-items: center; /* Aligns items vertically in the center */
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-direction: row;
-  column-gap: 120px;
   row-gap: 60px;
+  width: 100%;
 }
 
 .blinker-horizontal-stack {
@@ -180,6 +185,13 @@ button {
   height: 1rem;
 }
 
+/* Media query for screens smaller than 600px */
+@media (max-height: 700px) {
+  .bottom-spacer {
+    height: 0rem;
+  }
+}
+
 .intro-block {
   display: flex;
   flex-direction: column;
@@ -187,7 +199,8 @@ button {
   align-items: start;
   text-align: center;
   width: 300px; /* Adjust the width and height as needed */
-  gap: 20px;
+  gap: 10px;
+  margin-bottom: 8px;
 }
 
 .intro-block button {
@@ -211,6 +224,13 @@ button {
   box-shadow: 6px 6px 0 #4d5970;
 }
 
+@media (max-width: 737px) {
+  .intro-block button {
+    width: 150px; /* Adjust the width and height as needed */
+    font-size: 12px;
+  }
+}
+
 .intro-block .solid-button {
   background-color: #FCA311; /* Slightly transparent white background */
   color: #000;
@@ -222,6 +242,13 @@ button {
   font-style: normal;
   font-size: 20px;
   margin: 4px;
+  text-align: start;
+}
+
+.intro-block p.lighter {
+  font-weight: 300;
+  font-size: 16px;
+  text-align: start;
 }
 
 .intro-block button:hover {
@@ -252,7 +279,7 @@ button {
 }
 
 /* Media query for screens smaller than 600px */
-@media (max-width: 600px) {
+@media (max-width: 737px) {
   .image-container {
     width: 200px; /* Adjust the width and height as needed */
     height: 200px;
@@ -310,16 +337,106 @@ button {
   color: #000000;
 }
 
-/* Project section styling */
-.portfolio-image {
-  width: 35vw;
+.horizontal-stack-projects {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; /* Aligns items vertically in the center */
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.portfolio-piece {
+  margin: 0 20px;
+  display: flex;
+  justify-content: center; /* center image horizontally */
+  align-items: center; /* center image vertically */
+  flex-direction: column;
+}
+
+.portfolio-image-container {
+  width: 50vh;
+  height: 25vh; /* desired height */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center; /* center image horizontally */
+  align-items: center; /* center image vertically */
   transition: transform 0.2s;
   border-radius: 5px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 
-#projects img:hover {
+/* Project section styling */
+.portfolio-image {
+  width: 100%; /* adjust width to maintain aspect ratio */
+  height: auto; /* make height fill the container */
+  max-width: none; /* ensures image can scale up if needed */
+  border-radius: 5px;
+}
+
+@media (max-width: 850px) {
+  .portfolio-image-container {
+    width: 40vh;
+    height: 20vh;
+  }
+}
+
+@media (max-height: 700px) {
+  .portfolio-image-container {
+    width: 40vh;
+    height: 20vh; 
+  }
+}
+
+#projects .portfolio-image-container:hover {
   transform: scale(1.05);
+}
+
+.horizontal-stack-about-me {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; /* Aligns items vertically in the center */
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 100%;
+}
+
+.horizontal-stack-about-me img {
+  width: 300px;
+}
+
+.subtext {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 1;
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.text-stack {
+  width: 400px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+@media (max-height: 700px) {
+  .text-stack {
+    font-size: 12px;
+  }
+}
+
+@media (max-height: 700px) {
+  .horizontal-stack-about-me img {
+    width: 200px;
+  }
+}
+
+@media (max-height: 700px) {
+  .subtext {
+    font-size: 10px;
+  }
 }
 
 .resume-block {
@@ -396,20 +513,6 @@ button {
   box-shadow: 8px 8px 0 #4d5970;
 }
 
-.project-header, .project-section {
-  font-family: 'montserrat', sans-serif;
-  margin: auto;
-  width: 80%;
-  max-width: 960px;
-}
-
-header {
-  padding: 2em 0;
-  background-color: #14213D;
-  color: white;
-  text-align: center;
-}
-
 /* Back button styling */
 .back-button {
   position: fixed; /* Fixed positioning to overlay the header */
@@ -428,6 +531,53 @@ header {
   opacity: 1;
 }
 
+.project-header, .project-section {
+  margin: auto;
+  width: 80%;
+  max-width: 960px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-study {
+  background-color: #E5E5E5;
+}
+
+.case-study .image-block p {
+  margin: 0;
+}
+
+.case-study .image-block {
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 2em 0;
+  background-color: #14213D;
+  color: white;
+  text-align: center;
+}
+
+.case-study p{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 2;
+}
+
+.case-study h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -439,8 +589,33 @@ th, td {
   text-align: center;
 }
 
-th {
-  background-color: #f2f2f2;
+.case-study img, .image-block img {
+  width: 40vw;
+  height: auto;
+  align-self: center;
+  margin: 16px;
+}
+
+.case-study .image-block-vertical {
+  width: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-study .image-block-vertical img {
+  width: 40vh;
+  height: auto;
+  align-self: center;
+}
+
+li {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 2;
+  padding-bottom: 16px;
 }
 
 footer {

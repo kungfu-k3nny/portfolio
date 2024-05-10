@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import Typewriter from './Typewriter';
 
@@ -7,7 +7,7 @@ const LandingPage = () => {
   const [activeButton, setActiveButton] = useState(0);
   const navRef = useRef(null);
 
-  const sections = ['home', 'projects', 'about', 'resume', 'contact'];
+  const sections = useMemo(() => ['home', 'projects', 'about', 'resume', 'contact'], []);
 
   const scrollToSection = (id, buttonIndex) => {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
@@ -29,15 +29,32 @@ const LandingPage = () => {
     setActiveButton(sectionIndex);
   };
 
+  //updates nav bar indicator
   useEffect(() => {
     const interval = setInterval(() => {
       handleScroll()
-    }, 50); // 500 milliseconds = 0.5 seconds
+    }, 50); // 50 milliseconds = 0.05 seconds
 
     return () => {
       clearInterval(interval);
     };
-  }, [indicatorPosition]);
+  }, [handleScroll]);
+
+  //sets the nav bar indicator to the first page
+  useEffect(() => {
+    updateIndicator(0)
+  }, []); // Empty dependency array to run only once after mount
+
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    // Trigger the animation shortly after the component mounts
+    const timer = setTimeout(() => {
+      setAnimate(true);
+    }, 100); // Delay can be adjusted or set to 0 for immediate effect
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div>
@@ -55,27 +72,20 @@ const LandingPage = () => {
 
       <div id="home" className="section black">
         <div className='top-spacer'></div>
-        <div className='horizontal-stack-intro'>
+        <div className={`horizontal-stack-intro ${animate ? 'faded-slide' : ''}`}>
           <div className='intro-block'>
             <h1 className='h1-intro'>Kenneth Liou</h1>
             <Typewriter words={["Machine Learning Engineer", "Software Engineer"]} />
             <div className='medium-spacer'></div>
-            <button onClick={() => scrollToSection('contact', 5)}
-            className={`intro-block button ${4 === activeButton ? 'active' : ''}`}><p>Get in Touch</p></button>
+            <button onClick={() => scrollToSection('projects', 2)}><p>View my Work</p></button>
+            <div></div>
+            <button className="solid-button" onClick={() => scrollToSection('contact', 5)}><p>Get in Touch</p></button>
           </div>
           <div class="image-container">
             <img src="images/head_shot.jpg" alt="Head shot"></img>
           </div>
         </div>
-        <div>
-          <div className="down-indicator-white" onClick={() => scrollToSection('projects', 1)}>
-              <p>View my Projects</p>
-            <div>
-              <img src={"images/angle-arrow-down-white.png"}></img>
-            </div>
-          </div>
-        </div>
-        
+        <div className='bottom-spacer'></div>
       </div>
 
       <div id="projects" className="section dark-blue">
@@ -91,7 +101,7 @@ const LandingPage = () => {
           <div className="down-indicator-white" onClick={() => scrollToSection('about', 2)}>
             <p>Learn More About Me</p>
             <div>
-              <img src={"images/angle-arrow-down-white.png"}></img>
+              <img src={"images/angle-arrow-down-white.png"} alt="Leawrn More About Me button"></img>
             </div>
           </div>
         </div>
@@ -105,7 +115,7 @@ const LandingPage = () => {
           <div className="down-indicator-black" onClick={() => scrollToSection('resume', 3)}>
             <p>See my Resume</p>
             <div>
-              <img src={"images/angle-arrow-down-black.png"}></img>
+              <img src={"images/angle-arrow-down-black.png"} alt="See my Resume Button"></img>
             </div>
           </div>
         </div>
@@ -114,13 +124,13 @@ const LandingPage = () => {
       <div id="resume" class="section yellow">
         <div className='top-spacer'></div>
         <div className='resume-block'>
-          <iframe id="pdf-viewer" src="Kenneth_Liou_general.pdf" frameborder="0"></iframe>
+          <iframe id="pdf-viewer" src="Kenneth_Liou_general.pdf" frameborder="0" title='resume'></iframe>
         </div>
         <div>
           <div className="down-indicator-black" onClick={() => scrollToSection('contact', 4)}>
             <p>Contact Me</p>
             <div>
-              <img src={"images/angle-arrow-down-black.png"}></img>
+              <img src={"images/angle-arrow-down-black.png"} alt="Contact Me Button"></img>
             </div>
           </div>
         </div>

@@ -7,34 +7,45 @@ const Typewriter = ({ words, typingDelay = 100, deletingDelay = 50, delayBetween
     const [isDeleting, setIsDeleting] = useState(false);
 
     useEffect(() => {
+        let timeoutId;
         if (isDeleting) {
             if (subIndex > 1) {
-                setTimeout(() => {
+                timeoutId = setTimeout(() => {
+                    // Functional update to avoid including currentWord in dependencies
                     setCurrentWord(currentWord.slice(0, subIndex - 1));
                     setSubIndex(subIndex - 1);
                 }, deletingDelay);
-            } else if (subIndex == 1) {
-                setTimeout(() => {
+            } else if (subIndex === 1) {
+                timeoutId = setTimeout(() => {
+                    // Functional update to reset currentWord without needing it in dependencies
                     setCurrentWord(' ');
                     setSubIndex(subIndex - 1);
                 }, deletingDelay);
             } else {
                 setIsDeleting(false);
-                setIndex((index + 1) % words.length);
+                // Functional update to avoid including index in dependencies
+                setIndex(prevIndex => (prevIndex + 1) % words.length);
             }
         } else {
             if (subIndex < words[index].length) {
-                setTimeout(() => {
-                    setCurrentWord(currentWord + words[index][subIndex]);
+                timeoutId = setTimeout(() => {
+                    // Using functional update for currentWord
+                    setCurrentWord(currentWord => currentWord + words[index][subIndex]);
                     setSubIndex(subIndex + 1);
                 }, typingDelay);
             } else {
-                setTimeout(() => {
+                timeoutId = setTimeout(() => {
                     setIsDeleting(true);
                 }, delayBetweenWords);
             }
         }
-    }, [subIndex, isDeleting]);
+
+        // Cleanup function to clear timeout when dependencies change or component unmounts
+        return () => clearTimeout(timeoutId);
+    }, [
+        // Including all dependencies used in the effect to adhere to react-hooks/exhaustive-deps
+        subIndex, isDeleting, currentWord, deletingDelay, index, typingDelay, delayBetweenWords, words
+    ]);
 
     return (
         <div className='blinker-horizontal-stack'>

@@ -106,7 +106,7 @@ const LandingPage = () => {
           </div>
           <div className='portfolio-piece'>
             <Link to="/project3" className='portfolio-image-container'>
-              <img src="images/bagelgourmet/responsiveredesign.png" className="portfolio-image" alt="Redesigned Bagel Gourmet Contact Page" />
+              <img src="images/responsiveredesign.png" className="portfolio-image" alt="Redesigned Bagel Gourmet Contact Page" />
             </Link>
             <p>Bagel Gourmet Responsive Redesign</p>
           </div>

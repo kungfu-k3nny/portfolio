@@ -81,7 +81,7 @@ const LandingPage = () => {
             <button className="solid-button" onClick={() => scrollToSection('contact', 5)}>Get in Touch</button>
           </div>
           <div class="image-container">
-            <img src="images/head_shot.jpg" alt="Head shot"></img>
+            <img src="/static/images/head_shot.jpg" alt="Head shot"></img>
           </div>
           <div></div>
         </div>
@@ -94,19 +94,19 @@ const LandingPage = () => {
         <div className='horizontal-stack-projects'>
           <div className='portfolio-piece'>
             <Link to="/project1" className='portfolio-image-container'>
-              <img src="images/sportsbook.png" className="portfolio-image" alt="Chug's Sportsbook" />
+              <img src="/static/images/sportsbook.png" className="portfolio-image" alt="Chug's Sportsbook" />
             </Link>
             <p>Chug's Sportsbook Competitive Analysis</p>
           </div>
           <div className='portfolio-piece'>
             <Link to="/project2" className='portfolio-image-container'>
-              <img src="images/partiful.png" className="portfolio-image" alt="Partiful Homepage" />
+              <img src="/static/images/partiful.png" className="portfolio-image" alt="Partiful Homepage" />
             </Link>
             <p>Partiful Homepage Redesign</p>
           </div>
           <div className='portfolio-piece'>
             <Link to="/project3" className='portfolio-image-container'>
-              <img src="images/responsiveredesign.png" className="portfolio-image" alt="Redesigned Bagel Gourmet Contact Page" />
+              <img src="/static/images/responsiveredesign.png" className="portfolio-image" alt="Redesigned Bagel Gourmet Contact Page" />
             </Link>
             <p>Bagel Gourmet Responsive Redesign</p>
           </div>
@@ -116,7 +116,7 @@ const LandingPage = () => {
           <div className="down-indicator-white" onClick={() => scrollToSection('about', 2)}>
             <p>Learn More About Me</p>
             <div>
-              <img src={"images/angle-arrow-down-white.png"} alt="Leawrn More About Me button"></img>
+              <img src={"/static/images/angle-arrow-down-white.png"} alt="Leawrn More About Me button"></img>
             </div>
           </div>
         </div>
@@ -128,9 +128,9 @@ const LandingPage = () => {
         <div className='horizontal-stack-about-me'>
           <div></div>
           <div>
-            <img src='images/foraging.jpg' alt='Me and my friend Brendan foraging for mussels at Pillar Point, Half Moon Bay'></img>
+            <img src='/static/images/foraging.jpg' alt='Me and my friend Brendan foraging for mussels at Pillar Point, Half Moon Bay'></img>
             <p className='subtext'>My friend Brendan and I foraging for mussels at Pillar Point, Half Moon Bay</p>
-            <img src='images/mtg.jpg' alt='My friend Kevin and I playing Magic the Gathering'></img>
+            <img src='/static/images/mtg.jpg' alt='My friend Kevin and I playing Magic the Gathering'></img>
             <p className='subtext'>My friend Kevin and I playing Magic the Gathering</p>
           </div>
           <p className='text-stack'>
@@ -148,7 +148,7 @@ const LandingPage = () => {
           <div className="down-indicator-black" onClick={() => scrollToSection('resume', 3)}>
             <p>See my Resume</p>
             <div>
-              <img src={"images/angle-arrow-down-black.png"} alt="See my Resume Button"></img>
+              <img src={"/static/images/angle-arrow-down-black.png"} alt="See my Resume Button"></img>
             </div>
           </div>
         </div>
@@ -163,7 +163,7 @@ const LandingPage = () => {
           <div className="down-indicator-black" onClick={() => scrollToSection('contact', 4)}>
             <p>Contact Me</p>
             <div>
-              <img src={"images/angle-arrow-down-black.png"} alt="Contact Me Button"></img>
+              <img src={"/static/images/angle-arrow-down-black.png"} alt="Contact Me Button"></img>
             </div>
           </div>
         </div>
@@ -178,10 +178,10 @@ const LandingPage = () => {
               <b className='poppins-regular'>Email:</b> kenneth_liou@brown.edu</p>
               <div className='contact-image-block'>
                 <a href="mailto:kenneth_liou@brown.edu" class="contact-button-container" alt="Email Me Button">
-                  <img src="images/mail.png" alt="Email Icon"></img>
+                  <img src="/static/images/mail.png" alt="Email Icon"></img>
                 </a>
                 <a href="https://www.linkedin.com/in/kenneth-liou/" class="contact-button-container" alt="Linkedin Button" target="_blank" rel="noopener noreferrer">
-                  <img src="images/linkedin.png" alt="Linkedin Icon"></img>
+                  <img src="/static/images/linkedin.png" alt="Linkedin Icon"></img>
                 </a>
               </div>
             </div>

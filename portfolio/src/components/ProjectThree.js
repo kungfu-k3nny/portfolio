@@ -37,7 +37,7 @@ const ProjectThree = () => {
         </p>
         
         <div className='image-block'>
-          <img src="images/bagelgourmet/originalbagelgourmet.png" alt="Original Bagel Gourmet Wesbite"></img>
+          <img src="/static/images/bagelgourmet/originalbagelgourmet.png" alt="Original Bagel Gourmet Wesbite"></img>
           <ol>
             <li><b>Spacing and Symmetry: </b>The close proximity of the logo to the page title and overall lack of symmetry made the site feel cramped and unbalanced.</li>
             <li><b>Visibility and Contrast: </b>Poor contrast between text and background, along with very small text sizes, hindered readability.</li>
@@ -56,7 +56,7 @@ const ProjectThree = () => {
         The redesign process began with speed sketching, where I produced nine quick sketches to explore various visual and structural layouts. Elements from the most promising sketches were then combined to create a clear, functional design that respected the identity of the bagel shop while enhancing user engagement.
         </p>
 
-        <img src="images/bagelgourmet/speedsketches.jpg" alt="Speed Sketches"></img>
+        <img src="/static/images/bagelgourmet/speedsketches.jpg" alt="Speed Sketches"></img>
         
         <p>
           Moving to wireframing, I developed layouts for tablet, mobile, and desktop views. Each design addressed the initial shortcomings:
@@ -71,21 +71,21 @@ const ProjectThree = () => {
           <h4>
             Desktop wireframe
           </h4>
-          <img src="images/bagelgourmet/lofidesktop.jpg" alt="Lofi Desktop"></img>
+          <img src="/static/images/bagelgourmet/lofidesktop.jpg" alt="Lofi Desktop"></img>
         </div>
 
         <div className='image-block-vertical'>
           <h4>
             Tablet wireframe
           </h4>
-          <img src="images/bagelgourmet/lofitablet.jpg" alt="Lofi Tablet"></img>
+          <img src="/static/images/bagelgourmet/lofitablet.jpg" alt="Lofi Tablet"></img>
         </div>
 
         <div className='image-block-vertical'>
           <h4>
             Mobile wireframe
           </h4>
-          <img src="images/bagelgourmet/lofimobile.jpg" alt="Lofi Mobile"></img>
+          <img src="/static/images/bagelgourmet/lofimobile.jpg" alt="Lofi Mobile"></img>
         </div>
       </section>
 

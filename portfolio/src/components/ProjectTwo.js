@@ -38,7 +38,7 @@ const ProjectTwo = () => {
 
   <section className="project-section">
     <h2>Problem Definition</h2>
-    <img src="images/original_partiful.webp" alt="Original Partiful Homepage"></img>
+    <img src="/static/images/original_partiful.webp" alt="Original Partiful Homepage"></img>
     <p>The clients at Partiful tasked us with redesigning their homepage for a more intuitive design to attract more users and improve navigation. Some problems that they had expressed included the following:</p>
     <ul>
       <li>Inability to see more than one or two events on the homepage at a time (limited surface area of h-scroll)</li>

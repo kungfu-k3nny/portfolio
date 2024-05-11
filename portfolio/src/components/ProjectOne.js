@@ -39,21 +39,21 @@ const ProjectOne = () => {
         </p>
         
         <div className='image-block'>
-          <img src="images/netflix.png" alt="Netflix Homescreen"></img>
+          <img src="/static/images/netflix.png" alt="Netflix Homescreen"></img>
           <p>
             <b>Netflix</b> excels in curating content based on user preferences but lacks easy navigational cues once a film starts playing. Its inability to sort films by studio was noted as a potential area for improvement.
           </p>
         </div>
 
         <div className='image-block'>
-        <img src="images/instagram.png" alt="Instagram Homescreen"></img>
+        <img src="/static/images/instagram.png" alt="Instagram Homescreen"></img>
           <p>
           <b>Instagram</b> provides a strong user engagement by sorting content by relevance and recency, though it falls short in searchable content by title, limiting user control over content discovery.
           </p>
         </div>
         
         <div className='image-block'>
-          <img src="images/gmail.png" alt="Gmail Homescreen"></img>
+          <img src="/static/images/gmail.png" alt="Gmail Homescreen"></img>
           <p>
           <b>Gmail</b> stands out with its chronological email sorting, making it easy to track communication based on time. However, it lacks sorting by relevance, which could enhance the user's ability to prioritize information.
           </p>
@@ -112,7 +112,7 @@ const ProjectOne = () => {
           With the insights from my analysis, I set out to develop "Chug's Sportsbook," a React-based web application tailored for fantasy sports users. The design included several key features aimed at improving user experience:
         </p>
 
-        <img src="images/sportsbook.png" alt="Chug's Sportsbook"></img>
+        <img src="/static/images/sportsbook.png" alt="Chug's Sportsbook"></img>
         <ol>
           <li><b>Content Filtering: </b>Integrating a search bar allowed users to filter content dynamically based on keywords or producer names, making it easier to find specific items.</li>
           <li><b>Sorting Functionality: </b>Users could sort sports props by game time or popularity through a dropdown menu, a feature inspired by the intuitive sorting mechanisms of Netflix and Gmail.</li>
